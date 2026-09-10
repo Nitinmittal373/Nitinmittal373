@@ -1,16 +1,46 @@
-## Hi there 👋
+# Hi, I'm Nitin 👋
 
-<!--
-**Nitinmittal373/Nitinmittal373** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a Computer Science student focused on improving my problem-solving skills and learning how to build real software projects.
 
-Here are some ideas to get you started:
+## What I'm working on
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Strengthening Java and DSA
+- Building Android applications with Java
+- Learning backend development with Spring Boot
+- Practicing problem solving through coding platforms
+- Learning by building and improving projects
+
+## Tech I'm using
+
+Java • DSA • Android • Room Database • RecyclerView • Git/GitHub
+
+## Featured Project
+
+### ExpenseTracker
+
+A Java-based Android expense tracker built with Room Database and RecyclerView.
+
+It supports:
+
+- Adding expenses
+- Editing expenses
+- Deleting expenses
+- Category selection
+- Total expense calculation
+- Persistent local storage
+- Empty-state handling
+- Material UI
+
+[View ExpenseTracker →](https://github.com/Nitinmittal373/ExpenseTracker)
+
+## Currently learning
+
+Java → DSA → Android → Backend
+
+## Goals
+
+Build stronger problem-solving skills, create useful projects, and prepare for software engineering internships.
+
+## Connect
+
+[GitHub](https://github.com/Nitinmittal373)
