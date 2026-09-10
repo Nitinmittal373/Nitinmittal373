@@ -1,6 +1,6 @@
 # Hi, I'm Nitin 👋
 
-I'm a Computer Science student focused on improving my problem-solving skills and learning how to build real software projects.
+I'm a Computer Science and Engineering student focused on improving my problem-solving skills and learning how to build real software projects.
 
 ## What I'm working on
 
