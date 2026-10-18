@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" fill="none">
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-strong">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0d1a0d" stroke-width="0.5"/>
+    </pattern>
+    <!-- Data packet gradient -->
+    <linearGradient id="packet-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00ff88" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cyan-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="840" height="520" fill="#0a0e0a" rx="8"/>
+  <rect width="840" height="520" fill="url(#grid)" rx="8" opacity="0.4"/>
+
+  <!-- System ID -->
+  <text x="20" y="24" font-family="'Courier New',monospace" font-size="10" fill="#1a3a1a" opacity="0.6">NODE_01 // BACKEND CONTROL SYSTEM v3.7.3</text>
+  <text x="680" y="24" font-family="'Courier New',monospace" font-size="10" fill="#1a3a1a" opacity="0.6">SYS.READY</text>
+
+  <!-- ═══════ INFRASTRUCTURE DIAGRAM ═══════ -->
+  
+  <!-- CLIENT node -->
+  <rect x="40" y="170" width="90" height="40" rx="4" fill="none" stroke="#00ff88" stroke-width="1.2" opacity="0.8">
+    <animate attributeName="opacity" values="0;0;0.8;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="85" y="194" font-family="'Courier New',monospace" font-size="11" fill="#00ff88" text-anchor="middle" opacity="0.9">
+    CLIENT
+    <animate attributeName="opacity" values="0;0;0.9;0.9" dur="6s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Connection: CLIENT → API -->
+  <line x1="130" y1="190" x2="210" y2="190" stroke="#0d2d0d" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Animated data packet -->
+  <circle r="3" fill="#00ff88" filter="url(#glow)">
+    <animate attributeName="cx" values="130;210" dur="6s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="cy" values="190;190" dur="6s" repeatCount="indefinite" begin="0.5s"/>
+    <animate attributeName="opacity" values="0;0;1;1;1;0;0" dur="6s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+
+  <!-- API GATEWAY node -->
+  <rect x="210" y="170" width="110" height="40" rx="4" fill="none" stroke="#00d4ff" stroke-width="1.2" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0.8;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="265" y="194" font-family="'Courier New',monospace" font-size="10" fill="#00d4ff" text-anchor="middle">
+    API GATEWAY
+    <animate attributeName="opacity" values="0;0;0;0.9;0.9" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <!-- Status indicator -->
+  <circle cx="222" cy="178" r="3" fill="#00ff88">
+    <animate attributeName="opacity" values="0;0;0;0;1;0.4;1;0.4;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Connection: API → AUTH -->
+  <line x1="320" y1="190" x2="390" y2="190" stroke="#0d2d0d" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle r="3" fill="#00d4ff" filter="url(#glow)">
+    <animate attributeName="cx" values="320;390" dur="6s" repeatCount="indefinite" begin="1.5s"/>
+    <animate attributeName="cy" values="190;190" dur="6s" repeatCount="indefinite" begin="1.5s"/>
+    <animate attributeName="opacity" values="0;0;0;0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- AUTH + LOGIC node -->
+  <rect x="390" y="170" width="120" height="40" rx="4" fill="none" stroke="#00d4ff" stroke-width="1.2" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0.8;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="450" y="188" font-family="'Courier New',monospace" font-size="9" fill="#00d4ff" text-anchor="middle">
+    AUTH
+    <animate attributeName="opacity" values="0;0;0;0;0.9;0.9" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <text x="450" y="201" font-family="'Courier New',monospace" font-size="9" fill="#cccccc" text-anchor="middle">
+    BUSINESS LOGIC
+    <animate attributeName="opacity" values="0;0;0;0;0.7;0.7" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <circle cx="402" cy="178" r="3" fill="#00ff88">
+    <animate attributeName="opacity" values="0;0;0;0;0;1;0.4;1;0.4;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Connection: LOGIC → DB -->
+  <line x1="510" y1="190" x2="580" y2="190" stroke="#0d2d0d" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle r="3" fill="#ffaa00" filter="url(#glow)">
+    <animate attributeName="cx" values="510;580" dur="6s" repeatCount="indefinite" begin="2.5s"/>
+    <animate attributeName="cy" values="190;190" dur="6s" repeatCount="indefinite" begin="2.5s"/>
+    <animate attributeName="opacity" values="0;0;0;0;0;1;1;0;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- DATABASE node -->
+  <rect x="580" y="170" width="100" height="40" rx="4" fill="none" stroke="#ffaa00" stroke-width="1.2" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0.8;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <!-- DB cylinder icon hint -->
+  <ellipse cx="630" cy="183" rx="8" ry="4" fill="none" stroke="#ffaa00" stroke-width="0.8" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0.6;0.6" dur="6s" repeatCount="indefinite"/>
+  </ellipse>
+  <text x="630" y="200" font-family="'Courier New',monospace" font-size="10" fill="#ffaa00" text-anchor="middle">
+    DATABASE
+    <animate attributeName="opacity" values="0;0;0;0;0;0.9;0.9" dur="6s" repeatCount="indefinite"/>
+  </text>
+  <circle cx="592" cy="178" r="3" fill="#00ff88">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;1;0.4;1;0.4;1" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Connection: DB → RESPONSE (going back) -->
+  <path d="M 680 190 Q 730 190 730 230 Q 730 260 680 260 L 100 260 Q 60 260 60 230 Q 60 215 85 215" stroke="#0d2d0d" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+  <!-- Return packet -->
+  <circle r="3" fill="#00ff88" filter="url(#glow)">
+    <animateMotion dur="6s" repeatCount="indefinite" begin="3.5s">
+      <mpath href="#returnPath"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;1;1;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <path id="returnPath" d="M 680 190 Q 730 190 730 230 Q 730 260 680 260 L 100 260 Q 60 260 60 230 Q 60 215 85 215" fill="none"/>
+
+  <!-- RESPONSE label -->
+  <rect x="350" y="246" width="100" height="22" rx="3" fill="#00ff8822" stroke="#00ff88" stroke-width="0.8" opacity="0">
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.8;0.8" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="400" y="261" font-family="'Courier New',monospace" font-size="11" fill="#00ff88" text-anchor="middle" font-weight="bold" opacity="0" filter="url(#glow)">
+    200 OK
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;1" dur="6s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- ═══════ TERMINAL BOOT LOG ═══════ -->
+  <rect x="40" y="310" width="400" height="170" rx="6" fill="#0d120d" stroke="#1a2e1a" stroke-width="1"/>
+  <!-- Terminal header -->
+  <rect x="40" y="310" width="400" height="22" rx="6" fill="#121a12"/>
+  <circle cx="56" cy="321" r="4" fill="#ff5f56"/>
+  <circle cx="70" cy="321" r="4" fill="#ffbd2e"/>
+  <circle cx="84" cy="321" r="4" fill="#27c93f"/>
+  <text x="240" y="325" font-family="'Courier New',monospace" font-size="9" fill="#555" text-anchor="middle">terminal — bash</text>
+
+  <text x="55" y="352" font-family="'Courier New',monospace" font-size="11" fill="#00ff88">
+    $ initializing_backend...
+    <animate attributeName="opacity" values="0;1;1" dur="1.5s" fill="freeze"/>
+  </text>
+  <text x="55" y="372" font-family="'Courier New',monospace" font-size="11" fill="#00d4ff">
+    [OK] API gateway online
+    <animate attributeName="opacity" values="0;0;1;1" dur="3s" fill="freeze"/>
+  </text>
+  <text x="55" y="392" font-family="'Courier New',monospace" font-size="11" fill="#00d4ff">
+    [OK] business logic loaded
+    <animate attributeName="opacity" values="0;0;0;1;1" dur="4s" fill="freeze"/>
+  </text>
+  <text x="55" y="412" font-family="'Courier New',monospace" font-size="11" fill="#ffaa00">
+    [OK] database connection established
+    <animate attributeName="opacity" values="0;0;0;0;1;1" dur="5s" fill="freeze"/>
+  </text>
+  <text x="55" y="438" font-family="'Courier New',monospace" font-size="11" fill="#00ff88" font-weight="bold">
+    [READY] waiting for the next request
+    <animate attributeName="opacity" values="0;0;0;0;0;1;1" dur="6s" fill="freeze"/>
+  </text>
+  <!-- Blinking cursor -->
+  <rect x="55" y="450" width="7" height="14" fill="#00ff88">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ═══════ TAGLINE ═══════ -->
+  <text x="530" y="340" font-family="'Courier New',monospace" font-size="22" fill="#e0e0e0" font-weight="bold" filter="url(#glow-strong)">
+    BUILD. BREAK.
+    <animate attributeName="opacity" values="0;0;0;0;0;0;1" dur="5s" fill="freeze"/>
+  </text>
+  <text x="530" y="370" font-family="'Courier New',monospace" font-size="22" fill="#e0e0e0" font-weight="bold" filter="url(#glow-strong)">
+    DEBUG. REPEAT.
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;1" dur="5.5s" fill="freeze"/>
+  </text>
+
+  <text x="530" y="410" font-family="'Courier New',monospace" font-size="10" fill="#557755" opacity="0">
+    I don't just want to make things
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.7" dur="6s" fill="freeze"/>
+  </text>
+  <text x="530" y="425" font-family="'Courier New',monospace" font-size="10" fill="#557755" opacity="0">
+    work. I want to understand
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.7" dur="6s" fill="freeze"/>
+  </text>
+  <text x="530" y="440" font-family="'Courier New',monospace" font-size="10" fill="#557755" opacity="0">
+    why they work.
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0.7" dur="6s" fill="freeze"/>
+  </text>
+
+  <!-- Decorative scan line -->
+  <rect x="0" y="0" width="840" height="2" fill="#00ff88" opacity="0.03">
+    <animate attributeName="y" values="0;520;0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom system bar -->
+  <rect x="0" y="500" width="840" height="20" fill="#080c08"/>
+  <text x="20" y="514" font-family="'Courier New',monospace" font-size="9" fill="#1a3a1a">UPTIME: ∞ │ LATENCY: &lt;1ms │ REQUESTS: illustrative │ STATUS: OPERATIONAL</text>
+  <circle cx="810" cy="510" r="4" fill="#00ff88" opacity="0.8">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
